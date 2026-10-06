@@ -1,16 +1,11 @@
-
-import toast from 'react-hot-toast'
-import './App.css'
-import { useState } from 'react'
-import JoinCreateChat from './components/JoinCreateChat';
+import JoinCreateChat from "./components/JoinCreateChat";
 
 function App() {
-  const [count, setCount] =useState(0);
   return (
-   <div>
+    <main className="min-h-screen bg-[#070b14] text-slate-100 flex flex-col items-center justify-center relative overflow-hidden">
       <JoinCreateChat />
-   </div>
-  )
+    </main>
+  );
 }
 
-export default App
+export default App;

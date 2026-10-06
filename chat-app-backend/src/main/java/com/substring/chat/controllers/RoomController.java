@@ -13,7 +13,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1/rooms")
-@CrossOrigin(AppConstants.FRONT_END_BASE_URL)
+@CrossOrigin(originPatterns = "*", allowCredentials = "true")
 public class RoomController {
 
     private RoomRepository roomRepository;

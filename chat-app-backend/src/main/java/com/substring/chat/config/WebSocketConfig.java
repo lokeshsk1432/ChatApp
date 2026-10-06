@@ -8,24 +8,18 @@ import org.springframework.web.socket.config.annotation.WebSocketMessageBrokerCo
 
 @Configuration
 @EnableWebSocketMessageBroker
-public class WebSocketConfig implements WebSocketMessageBrokerConfigurer
-{
+public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
+
     @Override
     public void configureMessageBroker(MessageBrokerRegistry config) {
-
         config.enableSimpleBroker("/topic");
-        //  /topic//messages
-
         config.setApplicationDestinationPrefixes("/app");
-        // /app/chat
-        // server-side: @messagingMapping("/chat")
     }
 
     @Override
     public void registerStompEndpoints(StompEndpointRegistry registry) {
-        registry.addEndpoint("/chat") // connection establishment
-                .setAllowedOrigins(AppConstants.FRONT_END_BASE_URL)
+        registry.addEndpoint("/chat")
+                .setAllowedOriginPatterns("*")
                 .withSockJS();
     }
-    //chat endpoint par connection apka establish hoga
 }
