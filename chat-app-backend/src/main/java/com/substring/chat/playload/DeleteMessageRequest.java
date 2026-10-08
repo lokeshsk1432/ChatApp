@@ -1,6 +1,5 @@
 package com.substring.chat.playload;
 
-import com.substring.chat.entities.MessageReply;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -8,13 +7,10 @@ import lombok.Setter;
 
 @Getter
 @Setter
-@AllArgsConstructor
 @NoArgsConstructor
-public class MessageRequest {
-
-    private String content;
+@AllArgsConstructor
+public class DeleteMessageRequest {
+    private String messageId;
     private String sender;
     private String roomId;
-    private MessageReply replyTo;
-
 }
